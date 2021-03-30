@@ -12,31 +12,13 @@ import com.google.android.material.tabs.TabLayout
 
 class MainActivity : AppCompatActivity() {
 
-    private var adapter: ViewPagerAdapter? = null
-
-    private var viewPager: ViewPager? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        val toolbar = findViewById<View>(R.id.toolbar) as Toolbar
-        setSupportActionBar(toolbar)
-
-        val back = findViewById<ImageView>(R.id.back)
-        back.setOnClickListener {
-          finish()
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.container, MainFragment.newInstance())
+                .commitNow()
         }
-
-        adapter = ViewPagerAdapter(supportFragmentManager)
-        viewPager = findViewById<ViewPager?>(R.id.viewpager)
-        viewPager!!.adapter = adapter
-
-        val tabLayout = findViewById<View>(R.id.tabLayout) as TabLayout
-        tabLayout.setupWithViewPager(viewPager)
-
-        tabLayout.getTabAt(0)!!.setText("Waypoint")
-        tabLayout.getTabAt(1)!!.setText("Map")
-        tabLayout.getTabAt(2)!!.setText("Comments")
     }
 }

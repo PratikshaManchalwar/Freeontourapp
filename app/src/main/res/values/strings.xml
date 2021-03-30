@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">FREEONTOUR</string>
+    <string name="back">Back</string>
+    <string name="km">kilometers</string>
+    <string name="days">days</string>
+    <string name="waypoints">waypoints</string>
+    <string name="mapFragment">Map Fragment</string>
+    <string name="commentFragment">Comment Fragment</string>
+    <string name="distance">Distance %1$d km</string>
+    <string name="duration">Duration %1$d h</string>
+
+    <string name="sortby">Sort by:</string>
+
+    <string-array name="sortingItems">
+        <item>Sort By</item>
+        <item>Newest</item>
+        <item>Oldest</item>
+        <item>Waypoint Type</item>
+        <item>Longest Duration</item>
+    </string-array>
 </resources>
